@@ -1,0 +1,21 @@
+{
+  "name": "list",
+  "repo": "shallker/list",
+  "description": "Component list",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/jquery": "*",
+    "shallker-wang/eventy": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/list.js",
+    "lib/li.js",
+    "tpl/list.js",
+    "tpl/li.js"
+  ]
+}
