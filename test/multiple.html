@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="../build/build.js"></script>
+    <script>
+      var List = require('list');
+      
+      var data = ['apple', 'banana', 'peach', 'orange', 'melon'];
+      var list = new List(data);
+      
+      list.multiple = true;
+      document.body.appendChild(list);
+    </script>
+  </body>
+</html>
