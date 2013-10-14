@@ -1,0 +1,15 @@
+doctype 5
+html
+  head
+    title Test
+
+  body
+    script(src="../build/build.js")
+    script
+      var List = require('list');
+
+      var data = ['apple', 'banana', 'peach', 'orange', 'melon'];
+      var list = new List(data);
+
+      list.multiple = true;
+      document.body.appendChild(list);
