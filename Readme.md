@@ -19,6 +19,9 @@ var list = new List(['foo', 'bar']);
 #### .item(Number index)
 
 ### li
+#### .index
+#### .active
+#### .selected
 #### .on(String eventName)
 #### .destroy()
 
