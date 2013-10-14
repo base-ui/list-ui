@@ -14,6 +14,20 @@
 var list = new List(['foo', 'bar']);
 ```
 
+### list
+#### .multiple
+#### .item(Number index)
+
+### li
+#### .on(String eventName)
+#### .destroy()
+
+
+## Test
+  http://shallker.github.io/list/test/index.html   
+  http://shallker.github.io/list/test/multiple.html   
+
+
 ## License
 
   MIT
