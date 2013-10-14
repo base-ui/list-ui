@@ -22,6 +22,8 @@ var list = new List(['foo', 'bar']);
 #### .on(String eventName)
 #### .destroy()
 
+## Themes
+[pure](https://github.com/shallker/list-theme-pure)   
 
 ## Test
   http://shallker.github.io/list/test/index.html   
