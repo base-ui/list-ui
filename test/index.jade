@@ -1,22 +1,20 @@
-doctype 5
-html
-  head
-    title Test
-    :stylus
-      .component.list
-        .li
-          &.active
-            background-color #DDD
+extends layout/index
 
-          &.selected
-            background-color #AAA
+block styles
+  :stylus
+    .component.list
+      .li
+        &.active
+          background-color #DDD
 
-  body
-    script(src="../build/build.js")
-    script
-      var List = require('list');
+        &.selected
+          background-color #AAA
 
-      var data = ['apple', 'banana', 'peach', 'orange', 'melon'];
-      var list = new List(data);
+append scripts
+  script
+    var List = require('list');
 
-      list.appendTo(document.body);
+    var data = ['apple', 'banana', 'peach', 'orange', 'melon'];
+    var list = new List(data);
+
+    list.appendTo(document.body);
