@@ -15,6 +15,8 @@ var list = new List(['foo', 'bar']);
 ```
 
 ### list
+#### .width
+#### .height
 #### .multiple
 #### .item(Number index)
 
