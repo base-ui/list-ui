@@ -1,7 +1,7 @@
 {
-  "name": "list",
-  "repo": "shallker/list",
-  "description": "Component list",
+  "name": "list-ui",
+  "repo": "base-ui/list-ui",
+  "description": "List UI",
   "version": "0.0.2",
   "keywords": [],
   "dependencies": {

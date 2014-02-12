@@ -7,7 +7,7 @@
 
   Install with [component(1)](http://component.io):
 
-    $ component install shallker/list
+    $ component install base-ui/list-ui
 
 ## API
 ```javascript
@@ -28,11 +28,11 @@ var list = new List(['foo', 'bar']);
 #### .destroy()
 
 ## Themes
-[pure](https://github.com/shallker/list-theme-pure)   
+[pure](https://github.com/base-ui/list-ui-theme-pure)   
 
 ## Test
-  http://shallker.github.io/list/test/index.html   
-  http://shallker.github.io/list/test/multiple.html   
+  http://base-ui.github.io/list-ui/test/index.html   
+  http://base-ui.github.io/list-ui/test/multiple.html   
 
 
 ## License
