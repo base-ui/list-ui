@@ -26,10 +26,14 @@ function require(path, parent, orig) {
   // perform real require()
   // by invoking the module's
   // registered function
-  if (!module.exports) {
-    module.exports = {};
-    module.client = module.component = true;
-    module.call(this, module.exports, require.relative(resolved), module);
+  if (!module._resolving && !module.exports) {
+    var mod = {};
+    mod.exports = {};
+    mod.client = mod.component = true;
+    module._resolving = true;
+    module.call(this, mod.exports, require.relative(resolved), mod);
+    delete module._resolving;
+    module.exports = mod.exports;
   }
 
   return module.exports;
@@ -9799,11 +9803,11 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 })( window );
 
 });
-require.register("polyfill-Array.prototype.map/component.js", function(exports, require, module){
+require.register("polyfill-array.prototype.map/component.js", function(exports, require, module){
 require('./Array.prototype.map');
 
 });
-require.register("polyfill-Array.prototype.map/Array.prototype.map.js", function(exports, require, module){
+require.register("polyfill-array.prototype.map/Array.prototype.map.js", function(exports, require, module){
 // @from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 // Production steps of ECMA-262, Edition 5, 15.4.4.19
 // Reference: http://es5.github.com/#x15.4.4.19
@@ -9880,7 +9884,7 @@ if (!Array.prototype.map) {
 }
 
 });
-require.register("shallker-array-forEach-shim/index.js", function(exports, require, module){
+require.register("shallker-array-foreach-shim/index.js", function(exports, require, module){
 /*
   @from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 */
@@ -10426,6 +10430,9 @@ module.exports = '<div class="li"></div>';
 
 
 
+
+
+
 require.alias("component-jquery/index.js", "list/deps/jquery/index.js");
 require.alias("component-jquery/index.js", "jquery/index.js");
 
@@ -10436,13 +10443,13 @@ require.alias("shallker-wang-eventy/index.js", "eventy/index.js");
 require.alias("shallker-wang-dever/component.js", "shallker-wang-eventy/deps/dever/component.js");
 require.alias("shallker-wang-dever/util/dever.js", "shallker-wang-eventy/deps/dever/util/dever.js");
 require.alias("shallker-wang-dever/component.js", "shallker-wang-eventy/deps/dever/index.js");
-require.alias("polyfill-Array.prototype.map/component.js", "shallker-wang-dever/deps/Array.prototype.map/component.js");
-require.alias("polyfill-Array.prototype.map/Array.prototype.map.js", "shallker-wang-dever/deps/Array.prototype.map/Array.prototype.map.js");
-require.alias("polyfill-Array.prototype.map/component.js", "shallker-wang-dever/deps/Array.prototype.map/index.js");
-require.alias("polyfill-Array.prototype.map/component.js", "polyfill-Array.prototype.map/index.js");
-require.alias("shallker-array-forEach-shim/index.js", "shallker-wang-dever/deps/array-foreach-shim/index.js");
-require.alias("shallker-array-forEach-shim/index.js", "shallker-wang-dever/deps/array-foreach-shim/index.js");
-require.alias("shallker-array-forEach-shim/index.js", "shallker-array-forEach-shim/index.js");
+require.alias("polyfill-array.prototype.map/component.js", "shallker-wang-dever/deps/Array.prototype.map/component.js");
+require.alias("polyfill-array.prototype.map/Array.prototype.map.js", "shallker-wang-dever/deps/Array.prototype.map/Array.prototype.map.js");
+require.alias("polyfill-array.prototype.map/component.js", "shallker-wang-dever/deps/Array.prototype.map/index.js");
+require.alias("polyfill-array.prototype.map/component.js", "polyfill-array.prototype.map/index.js");
+require.alias("shallker-array-foreach-shim/index.js", "shallker-wang-dever/deps/array-foreach-shim/index.js");
+require.alias("shallker-array-foreach-shim/index.js", "shallker-wang-dever/deps/array-foreach-shim/index.js");
+require.alias("shallker-array-foreach-shim/index.js", "shallker-array-foreach-shim/index.js");
 require.alias("shallker-wang-dever/component.js", "shallker-wang-dever/index.js");
 require.alias("shallker-wang-eventy/index.js", "shallker-wang-eventy/index.js");
 require.alias("list/index.js", "list/index.js");
